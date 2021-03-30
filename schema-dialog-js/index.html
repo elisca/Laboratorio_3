@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schema.org-Test</title>
+</head>
+<body>
+    <div itemscope itemtype="https://schema.org/MedicalEntity">
+        <h1>Diagnóstico médico</h1>
+        <p>El paciente analizado <span itemprop="legalStatus">toma medicamentos.</span></p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa aut recusandae odit debitis id sunt reiciendis, magni veritatis hic est inventore architecto praesentium minima enim sapiente? Recusandae neque inventore a.
+        Quam nihil quod commodi hic cumque fuga harum iste veniam et similique earum doloribus, iusto vitae ipsa tempora dolor sint, laboriosam nobis recusandae eos. Natus excepturi id nostrum labore numquam!
+        Illum sapiente explicabo tenetur quidem quasi provident, doloribus ut a, architecto autem eos eveniet, quia repellat cumque? Nobis eos veritatis mollitia quo, tempora, id veniam, cum doloribus provident officiis nihil.</p>
+    
+        <dialog id="dModal">
+            <h2>Soy una ventana modal</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut praesentium minima aliquid distinctio, explicabo ab autem totam nobis adipisci! Velit aliquam repudiandae quaerat dolorem aperiam, nihil possimus repellendus magnam commodi!</p>
+        </dialog>
+        <button onclick="abrirModal()">Abrir diálogo</button>
+    </div>
+    
+    <script>
+        function abrirModal(){
+            document.getElementById('dModal').setAttribute("open",true);
+        }
+    </script>
+</body>
+</html>
