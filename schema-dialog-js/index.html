@@ -14,16 +14,32 @@
         Quam nihil quod commodi hic cumque fuga harum iste veniam et similique earum doloribus, iusto vitae ipsa tempora dolor sint, laboriosam nobis recusandae eos. Natus excepturi id nostrum labore numquam!
         Illum sapiente explicabo tenetur quidem quasi provident, doloribus ut a, architecto autem eos eveniet, quia repellat cumque? Nobis eos veritatis mollitia quo, tempora, id veniam, cum doloribus provident officiis nihil.</p>
     
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/buCD-_1UPn4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <br>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3277.6306680581893!2d-58.36139068504671!3d-34.764895373550374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a32d25e6ab85d5%3A0xce6f7bc614bcc3d2!2sLa%20Golondrina%203086%2C%20B1834CWJ%20Temperley%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1617146597277!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <br>
+        
         <dialog id="dModal">
             <h2>Soy una ventana modal</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut praesentium minima aliquid distinctio, explicabo ab autem totam nobis adipisci! Velit aliquam repudiandae quaerat dolorem aperiam, nihil possimus repellendus magnam commodi!</p>
         </dialog>
-        <button onclick="abrirModal()">Abrir diálogo</button>
+
+        <button onclick="abrirModal()"><img alt="cloud" src="./src/cloud.png" height="24px"></button>
     </div>
     
+    <details>
+        <summary>Información específica</summary>
+        <h2>Tema</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto iusto quae debitis dolore veritatis? Eos unde cumque nam, provident nemo pariatur minima consequuntur atque soluta inventore blanditiis sed nostrum eaque!</p>
+    </details>
+
     <script>
         function abrirModal(){
             document.getElementById('dModal').setAttribute("open",true);
+        }
+ 
+        function cerrarModal(){
+            document.getElementById('dModal').removeAttribute("open");
         }
     </script>
 </body>
