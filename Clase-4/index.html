@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/scripts.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- Una mala practica
+    <button onclick="
+        saludar();
+        console.log('Otra linea');
+    ">Saludar</button>
+
+    <script>
+        function saludar(){
+            console.log("Hola");
+        }    
+    </script> -->
+    
+    <!-- Ejemplo 1
+        <script>
+            let btnSaludar=document.getElementById('btnSaludo');
+            document.addEventListener('click',()=>{
+                console.log("Hola");
+            });
+        </script> -->
+       
+        <!-- Ejemplo de alternativa a defer
+        <script>
+            window.addEventListener('DOMContentLoaded',()=>{
+                let btnSaludar=document.getElementById('btnSaludo');
+                document.addEventListener('click',function(){
+                    console.log("Hola");
+                });
+            });
+
+        </script> -->    
+
+        <button id="btnSaludo">Saludar</button>
+</body>
+</html>
