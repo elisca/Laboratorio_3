@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <style>
+        caption{
+            background-color: yellow;
+            color:red;
+        }
+
+        tfoot>tr>td{
+            background-color: green;
+        }
+
+        tr{
+            background-color: blue;
+        }
+
+        td{
+            border: 1px solid black;
+            color: white;
+            text-align: center;
+        }
+
+        .distinguido{
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>Horarios de <span class="distinguido">cursada</span></caption>
+        <thead>
+            <tr>
+                <td>Horario</td>
+                <td>Lunes</td>
+                <td>Martes</td>
+                <td>Miércoles</td>
+                <td>Jueves</td>
+                <td>Viernes</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1°</td>
+                <td rowspan="2">Prog. 3</td>
+                <td rowspan="2">Lab. 3</td>
+                <td rowspan="2">Arq. y S.O.</td>
+                <td rowspan="5">(N/A)</td>
+                <td rowspan="5">(N/A)</td>
+            </tr>
+            <tr>
+                <td>2°</td>
+            </tr>
+            <tr>
+                <td colspan="4">Recreo</td>
+            </tr>
+            <tr>
+                <td>3°</td>
+                <td rowspan="2">Prog. 3</td>
+                <td rowspan="2">Lab. 3</td>
+                <td rowspan="2">Arq. y S.O.</td>
+            </tr>
+            <tr>
+                <td>4°</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="6">Cursada UTN Avellaneda 2021</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

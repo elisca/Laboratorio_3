@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <form method="GET" target="/registro.php">
+        <label for="txtNombre">Nombre:</label>
+        <input type="text" name="datosNombre" id="txtNombre">
+        
+        <label for="txtApellido">Apellido:</label>
+        <input type="text" name="datosApellido" id="txtApellido">
+        
+        <br>
+        
+        <label for="txtEdad">Edad:</label>
+        <input type="text" name="datosEdad" id="txtEdad">
+        
+        <br>
+        
+        <fieldset>
+            <legend>Sexo</legend>
+            <input type="radio" name="datosSexo" id="rdoSexoF" value="F" checked>Femenino
+            <input type="radio" name="datosSexo" id="rdoSexoM" value="M">Masculino
+        </fieldset>
+        
+        <br>
+
+        <label for="txtComentarios">Comentarios:</label>
+        <input type="text" name="datosComentarios" id="txtComentarios">
+
+        <br>
+
+        <label for="datosLocalidad">Localidad:</label>
+        <select name="datosLocalidad" id="selLocalidad">
+            <optgroup label="Zona Sur">
+                <option value="avellaneda">Avellaneda</option>
+                <option value="quilmes">Quilmes</option>
+                <option value="Temperley">Temperley</option>
+            </optgroup>
+            <optgroup label="Zona Centro">
+                <option value="san-telmo">San Telmo</option>
+                <option value="flores">Flores</option>
+                <option value="balvanera">Balvanera</option>
+            </optgroup>
+        </select>
+
+        <br>
+
+        <input type="submit">
+        <input type="reset">
+        <input type="button" value="Personalizado">
+    </form>
+</body>
+</html>
