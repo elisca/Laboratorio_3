@@ -1,0 +1,23 @@
+h1{
+    color:red;
+    font-size: 100px;
+}
+
+.azul{
+    color: blue;
+}
+
+/*afecta a los 'id' con este nombre*/
+#miParrafo{ 
+    color:red;
+}
+
+#h1Naranja{
+    color: orange;
+}
+
+/*Todos los vínculos que contengan la palabra "google"*/
+a[href*="google"]{
+    text-decoration: none;
+    color: red;
+}

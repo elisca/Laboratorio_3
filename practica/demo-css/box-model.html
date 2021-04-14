@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS-Box model</title>
+    <!-- Las siguientes dos lineas traen una fuente de google -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight&display=swap" rel="stylesheet"> -->
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight&display=swap'); /*Fuente por link*/
+
+        *{
+            /*Tamaño de caja(puede ser contenido,borde,otros)*/
+            box-sizing: content-box;
+
+            margin: 0;
+        }
+
+        header li a, .azul{
+            text-decoration: none;
+            background-color: teal;
+            color: white;
+            padding: 20px;
+            margin: 20px 10px;
+            border: 1px solid blue;
+            border-radius: 10px;
+        }
+
+        li{
+            margin: 50px 10px;
+        }
+
+        ul{
+            list-style-type: none;/*Tipo de punto por item*/  
+        }
+
+        p{
+            display: inline-block;
+
+            margin: 10px 1px;
+
+            border: 1px solid black;
+            border-left: 1vw solid red;
+
+            padding: 10px;
+
+            width: 400px;
+
+            text-decoration: line-through;
+            text-transform: capitalize;
+            letter-spacing: 10px;
+            font-family: 'Zilla Slab Highlight', Times, serif; /*Por link*/
+            /*font-family: brushed, Times, serif; Por archivo*/
+        }
+
+        /*Define fuente personalizada*/
+        @font-face{
+            font-family: brushed;
+            src: url('./fonts/Brushed.ttf');
+        }
+    </style>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati totam blanditiis, cupiditate tenetur dolores aliquam quae sed nemo nihil delectus a exercitationem nisi. Praesentium molestias distinctio maiores quod quisquam eveniet?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati totam blanditiis, cupiditate tenetur dolores aliquam quae sed nemo nihil delectus a exercitationem nisi. Praesentium molestias distinctio maiores quod quisquam eveniet?</p>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="">Link 1</a></li>
+                <li><a href="">Link 2</a></li>
+                <li><a href="">Link 3</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
