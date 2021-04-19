@@ -1,0 +1,11 @@
+label,legend{
+    color: white;
+}
+
+.fondoRosa{
+    background-color: rgb(252, 172, 255);
+}
+
+.fondoRosaClaro{
+    background-color: rgb(249, 212, 250);
+}

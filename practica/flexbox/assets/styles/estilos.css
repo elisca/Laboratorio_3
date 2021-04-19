@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Chocolate Covered Raindrops';
+    src: url(./fuente.ttf);
+}
+
+body{
+    background-color: black;
+}
+
+h1{
+    font-family: 'Chocolate Covered Raindrops','Times New Roman','Courier New';
+}
+
+.caja{
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border: 1px greenyellow solid;
+}
+
+/*
+div:nth-of-type(2){
+    position: absolute;
+    left: 100px;
+    top: 50px;
+}
+*/
