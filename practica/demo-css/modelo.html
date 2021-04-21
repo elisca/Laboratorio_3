@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo Bienes Raices</title>
+    <style>
+        @media(min-width:760px){
+            header,footer{
+                flex-direction: row;
+                justify-content: space-between;
+                display: block
+            }
+            aside{
+                display: none;
+            }
+        }
+        @media(min-width:900px){
+            article{
+                background-color: rebeccapurple;
+            }
+        }
+        @media(min-width:950px) and (orientation:portrait){
+            article{
+                background-color: red;
+            }
+        }
+        header{
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: sticky;
+        }
+        main{
+            background-color: coral;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        footer{
+            background-color: black;
+            display: flex;
+            justify-content: space-around;
+        }
+        footer p{
+            color: white;
+        }
+        ul{
+            list-style-type: none;
+            display: flex;
+        }
+        ul li a{
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            background-color: gray;
+            border: 1px solid slateblue;
+            border-radius: 5px;
+            margin: 5px 10px;
+        }
+        article{
+            width: 200px;
+            height: 200px;
+            background-color: olive;
+            border: 1px solid black;
+            margin-bottom: 10px;
+        }
+        aside{
+            background-color: cadetblue;
+            width: 30%;
+        }
+        .importante{
+            background-color: yellow;
+            border: 1px dashed red;
+            margin: 0px;
+            padding: 10px;
+            text-align: center;
+        }
+        .principal{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./images/logo.svg" alt="">
+        <nav>
+            <ul>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="">Avisos</a></li>
+                <li><a href="">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <p class="importante">Este es un aviso importante</p>
+    <div class="principal">
+        <main>
+            <article>Articulo 1</article>
+            <article>Articulo 2</article>
+            <article>Articulo 3</article>
+            <article>Articulo 4</article>
+        </main>
+        <aside>Este es mi aside</aside>
+    </div>
+    <footer>
+        <p>Todos los derechos reservados &copy;</p>
+        <nav>
+            <ul>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Avisos</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

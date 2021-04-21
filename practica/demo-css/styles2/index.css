@@ -1,0 +1,18 @@
+div p {
+  background-color: blueviolet;
+  background-color: red;
+  border-width: 3px;
+}
+
+div p .masimportantes {
+  background-color: blueviolet;
+}
+
+div > .importante {
+  background-color: blue;
+}
+
+.importante {
+  background-color: blue;
+}
+/*# sourceMappingURL=index.css.map */
