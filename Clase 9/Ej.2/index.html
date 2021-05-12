@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/scripts.js" type="module" defer></script>
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+    <form>
+        <input type="text" name="nombre" placeholder="Ingrese nombre" required><br><br>
+        <input type="text" name="email" placeholder="Ingrese email" required><br><br>
+        <fieldset>
+            <legend>Género</legend>
+            <input type="radio" name="sexo" value="Masculino" checked>Masculino<br>
+            <input type="radio" name="sexo" value="Femenino">Femenino<br>
+        </fieldset>
+        <input type="submit" value="Alta persona">
+    </form>
+    <div class="container">
+        <h1>Lista dinámica</h1>
+        <button id="btnLista">Crear lista</button>
+        <div id="divLista"></div>
+    </div>
+</body>
+</html>

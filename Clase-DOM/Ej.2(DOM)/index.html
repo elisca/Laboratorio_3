@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .azul{
+            background-color: blue;
+        }
+
+        .mayuscula{
+            text-transform: uppercase;
+        }
+
+        .rojo{
+            background-color: red;
+        }
+
+        .txtBlanco{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="azul">Título principal</h1>
+    <form>
+        <label for="idNombre">Nombre:</label>
+        <input type="text" name="txtNombre" id="idNombre">
+    </form>
+    <div id="parrafos">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam labore quisquam possimus id debitis, quaerat deleniti ipsam nobis sequi ut praesentium odio earum nemo recusandae iste fugiat enim? Dignissimos, architecto?</p>
+        <p class="azul">Quae cum obcaecati tempora voluptas iure modi perspiciatis doloribus? Repudiandae a doloremque molestiae accusantium explicabo ipsum quibusdam nihil? Similique, optio? Laborum ipsam provident accusantium, alias in laboriosam necessitatibus illum vitae?</p>
+        <p>Cupiditate suscipit illo molestias minima pariatur id. Repudiandae esse quos laudantium reprehenderit. Quia asperiores fugit ab vero commodi veniam quibusdam! Ipsum numquam magnam nesciunt omnis ipsa tempore exercitationem hic esse.</p>
+    </div>
+    <nav>
+        <a href="https://www.google.com.ar/">Google</a>
+        <a href="https://www.clarin.com.ar/">Clarín</a>
+        <a href="https://www.infobae.com.ar/">Infobae</a>
+    </nav>
+
+    <h3 class="azul">Soy un subtitulo</h3>
+    <div id="divPers"></div>
+
+    <input type="button" value="Haceme clic!" id="btnClic">
+    <script>
+        //DOM(Document Object Model)
+        //JS ve al HTML como un objeto
+
+        /*
+        console.log(document);
+        console.log(document.documentElement);
+        console.log(document.head);
+        console.log(document.body);
+        console.log(document.title);
+        console.log(document.charset);
+        console.log(document.forms);
+        console.log(document.links);
+        */
+        const miDiv=document.getElementById('parrafos');//Trae enlace a un elemento
+        console.log(miDiv);
+        console.log(miDiv.children);
+
+        const misParrafos=[...document.getElementsByTagName('p')];//Trae un array de elementos
+        //const misParrafos=document.getElementsByTagName('p');//Trae una coleccion de elementos
+        misParrafos.forEach(parrafo=>console.log(parrafo));//Muestra cada parrafo
+
+        const miP1=document.getElementsByTagName('p')[0];//Trae coleccion elementos tag
+        console.log(misParrafos);
+        console.log(miP1);
+
+        const elemsAzul=document.getElementsByClassName('azul');//Trae coleccion elementos "Azul"
+        console.log(elemsAzul);
+
+        console.log(elemsAzul);
+        const div1=document.querySelector("p");//Trae primer elemento por tipo elemento
+        const div2=document.querySelector("#misParrafos");//Trae primer elemento por id
+        const div3=document.querySelector('.azul');//Trae primer elemento por tipo CSS
+        console.log(div3);
+
+        const divAzules=document.querySelectorAll('.azul');//Trae coleccion elementos por tipo CSS
+        console.log(divAzules);
+
+        console.log(document.querySelectorAll('div>p'));//Trae coleccion de parrafos dentro de divs
+
+        const divPersonalizado=document.getElementById('divPers');
+        divPersonalizado.innerText="Hola mundo!";//Solo texto
+        divPersonalizado.innerHTML="<h3 class='azul'>Hola mundo!</h3>"; //Formato HTML
+
+        const tituloH3=document.createElement("h3");
+        console.log(tituloH3);
+        const texto1=document.createTextNode('Soy texto 1');
+        const texto2=document.createTextNode('Soy texto 2');
+        tituloH3.appendChild(texto1);
+        //tituloH3.textContent="Soy texto 1";
+        tituloH3.appendChild(texto2);
+        divPersonalizado.appendChild(tituloH3);
+
+        const fragmento=document.createDocumentFragment();//Fragmento de documento
+
+        //Creo nodos hijos
+        const p1=document.createElement('p');
+        p1.textContent="Soy el parrafo 1";
+        const p2=document.createElement('p');
+        p2.textContent="Soy el parrafo 2";
+        const p3=document.createElement('p');
+        p3.textContent="Soy el parrafo 3";
+        
+        //p1.hasAttribute('id')
+        //p1.setAttribute('atributo','valor')
+        //p1.removeAttribute('atributo')
+
+        p1.setAttribute('style',{background-color: green;});
+
+        //Inserto nodos en elemento ficticio
+        fragmento.appendChild(p1);
+        fragmento.appendChild(p2);
+        fragmento.appendChild(p3);
+
+        //Inserto todo junto al cuerpo de pagina
+        divPersonalizado.appendChild(fragmento);
+
+        console.log(divPersonalizado.childNodes);//Ver nodos hijos
+        console.log(divPersonalizado.children);//Ver elementos hijos
+        console.log(divPersonalizado.firstChild);//Primer nodo hijo
+        console.log(divPersonalizado.firstElementChild);//Primer elemento hijo
+        console.log(divPersonalizado.lastChild);//Ultimo nodo hijo
+        console.log(divPersonalizado.lastElementChild);//Ultimo elemento hijo
+
+        let primerHijo=divPersonalizado.firstElementChild;
+        let segundoHijo=primerHijo.nextElementSibling;//Proximo elemento hermano del primero
+        primerHijo=segundoHijo.previousElementSibling;//Anterior elemento hermano del segundo
+
+        primerHijo.classList.add("azul","mayuscula");//Agrega clases CSS
+        primerHijo.classList.remove("azul")//Quita clases CSS
+        primerHijo.classList.replace("azul","rojo");//Reemplaza clase CSS
+        
+        //parentNode referencia elemento padre
+        //removeChild('nodo hijo remover')
+        //append agrega nodo hermano
+
+        divPersonalizado.firstElementChild.classList.toggle("azul");//Switch de clase habilitada
+
+        console.log("Recorrer hijos...");
+
+        //Recorre todos los hermanos de un elemento
+        let hijo=divPersonalizado.firstElementChild;
+        do{            
+            console.log(hijo);
+            hijo=hijo.nextElementSibling;
+        }while(hijo.nextElementSibling!=null);
+
+        //Elimina todos los nodos
+        while(divPersonalizado.hasChildNodes()){
+            divPersonalizado.removeChild(divPersonalizado.firstChild);
+        }
+
+        document.getElementById('btnClic').addEventListener("click",(e)=>{
+            alert("Hiciste clic!");
+        });
+</script>
+</body>
+</html>
