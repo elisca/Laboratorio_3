@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const nombres=["Juan","Ana","Pedro","Lucia"];
+        const empleados=[
+            {id:0,nombre:"Juan",sueldo:100},
+            {id:1,nombre:"Ana",sueldo:200},
+            {id:2,nombre:"Pedro",sueldo:50},
+            {id:3,nombre:"Lucia",sueldo:70},
+        ]
+
+        console.log(
+            nombres.map((e,index)=>{
+                return {id:index,nombre:e};
+            }
+        ));
+
+        //Muestra a los empleados con 50% de incremento salarial
+        console.log(
+            empleados.map((e)=>{
+                e.sueldo+=e.sueldo*0.5;
+                return e;
+            })
+        );
+
+        //Muestra un array con los sueldos
+        const sueldos=empleados.map((e)=>e.sueldo);
+        console.log(sueldos);
+    </script>
+</body>
+</html>

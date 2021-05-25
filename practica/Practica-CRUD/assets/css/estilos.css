@@ -1,0 +1,17 @@
+table{
+    justify-content: center;
+    text-align: center;
+}
+
+th{
+    background-color: forestgreen;
+    color: white;
+}
+
+tr:nth-child(even){
+    background-color: beige;
+}
+
+tr:nth-child(odd){
+    background-color: darkseagreen;
+}

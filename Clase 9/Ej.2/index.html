@@ -10,6 +10,7 @@
 </head>
 <body>
     <form>
+        <input type="hidden" name="id">
         <input type="text" name="nombre" placeholder="Ingrese nombre" required><br><br>
         <input type="text" name="email" placeholder="Ingrese email" required><br><br>
         <fieldset>
@@ -17,7 +18,8 @@
             <input type="radio" name="sexo" value="Masculino" checked>Masculino<br>
             <input type="radio" name="sexo" value="Femenino">Femenino<br>
         </fieldset>
-        <input type="submit" value="Alta persona">
+        <input type="submit" id="btnSubmit" value="Alta persona">
+        <input type="button" id="btnEliminar" class="oculto" value="Eliminar">
     </form>
     <div class="container">
         <h1>Lista dinámica</h1>

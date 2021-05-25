@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica de CRUD</title>
+    <script src="./assets/js/scripts.js" type="module" defer></script>
+    <link rel="stylesheet" href="./assets/css/estilos.css">
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Datos de Persona</legend>
+            <input type="hidden" name="txtId" id="idId">
+            <label for="txtNombre">Nombre:</label>
+            <input type="text" name="txtNombre" id="idNombre" placeholder="Ingrese su nombre..."><br>
+    
+            <label for="txtApellido">Apellido:</label>
+            <input type="text" name="txtApellido" id="idApellido" placeholder="Ingrese su apellido..."><br>
+    
+            <label for="txtEmail">Email</label>
+            <input type="text" name="txtEmail" id="idEmail" placeholder="Ingrese su email..."><br>
+    
+            <label for="txtEdad">Edad</label>
+            <input type="text" name="txtEdad" id="idEdad" placeholder="Ingrese su edad..."><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Acciones</legend>
+            <input type="submit" id="btnAgregar" value="Agregar persona">
+            <input type="button" id="btnModificar" value="Modificar persona">
+            <input type="button" id="btnEliminar" value="Eliminar persona">
+            <input type="button" id="btnEliminarTodo" value="Eliminar todo">
+            <input type="reset" id="btnReset" value="Restablecer">
+        </fieldset>
+    </form>
+    <div id="divTablaDatos"></div>
+</body>
+</html>

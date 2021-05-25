@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const nombres=["Juan","Ana","Pedro","Lucia"];
+        const empleados=[
+            {id:0,nombre:"Juan",sueldo:100},
+            {id:1,nombre:"Ana",sueldo:200},
+            {id:2,nombre:"Pedro",sueldo:50},
+            {id:3,nombre:"Lucia",sueldo:70},
+        ]
+
+        const sueldos=empleados.map((e)=>e.sueldo);
+        let suma=sueldos.reduce((prev,actual)=>{
+            return prev+actual;
+        },0);
+
+        console.log(suma);
+
+        console.log(empleados.filter(e=>e.sueldo>50).map((e)=>e.sueldo).reduce((p,a)=>p+a,0));
+    </script>
+</body>
+</html>

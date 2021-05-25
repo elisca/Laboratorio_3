@@ -81,31 +81,85 @@ function crearTBody(items){
     return tbody;
 }
 
+function almacenarDatos(data){
+    localStorage.setItem("lista",JSON.stringify(data));
+}
+
 let boton=null;
-let persona=[]; 
+let personas=JSON.parse(localStorage.getItem("lista")) || []; 
 boton=document.getElementById('btnLista');
 
 boton.addEventListener('click',handlerLoadList); //Agrega manejador al evento
 
 function handlerClick(e){//Si hice clic en el botón avisa
-    if(!e.target.matches("td")) return;
-
-    let id=e.target.parentNode.firstElementChild.textContent;
-    console.log(id);
-    /*
-    console.log(e.target);
-    if(element.matches('#btnLista')){//Argumento es un selector de CSS
-        console.log("Hiciste clic en el botón");
+    if(!e.target.matches("td")){
+        let id=e.target.parentNode.firstElementChild.textContent;
+        console.log(id);
+        /*
+        console.log(e.target);
+        if(element.matches('#btnLista')){//Argumento es un selector de CSS
+            console.log("Hiciste clic en el botón");
+        }
+        */
+        cargarFormulario(id);
     }
-    */      
+    //En caso de presionar "Eliminar"
+    else if(e.target.matches("#btnEliminar")){
+        let id=parseInt(document.forms[0].id.value);
+        console.log("Boton eliminar presionado.");
+        
+        if(confirm("¿Confirma Eliminación?")){
+            let index=personas.findIndex((el)=>el.id==el.id)
+            //personas=personas.findIndex((el)=>el.id===id);
+            
+            /*
+            personas=personas.filter(el=>el.id!==id);
+            almacenarDatos(personas);
+            handlerLoadList();
+            */
+        }
+    }
 }
 
-/*
 window.addEventListener('DOMContentloaded',()=>{
     document.forms[0].addEventListener('submit', handlerSubmit);
-    boton=document.getElementById('btnLista');
-    boton.addEventListener('click',handlerLoadList);
+    /*boton=document.getElementById('btnLista');
+    boton.addEventListener('click',handlerLoadList);*/
+    if(personas.lenght>0){
+        handlerLoadList(personas);
+    }
 });
+
+function limpiarFormulario(frm){
+    frm.reset();
+    document.getElementById("btnEliminar").classList.add("oculto");
+    document.getElementById("btnSubmit").value="Alta persona";
+}
+
+function cargarFormulario(id){
+    let Persona=null;
+
+    /*
+    personas.forEach(persona=>{
+        if(persona.id===parseInt(id)){
+            Persona=persona;
+            console.log(Persona);
+        }
+    });*/
+    
+    //Desestructuración
+    const {nombre,sexo,email}=personas.filter((p)=>p.id===parseInt(id))[0];
+    
+    const frm=document.forms[0];
+    
+    frm.nombre.value=p.nombre;
+    frm.email.value=p.email;
+    frm.sexo.value=p.sexo;
+    frm.id.value=p.id;
+
+    document.getElementById("btnSubmit").value="Modificar";
+    //CORREGIR:document.getElementById("btnEliminar").removeAttribute("class",);
+}
 
 /*Manejador del evento clic del botón(debe recibir evento)
 e.target es el accionador
@@ -114,6 +168,28 @@ e.target es el accionador
 //Recibe un formulario
 function handlerSubmit(e){
     e.preventDefault();
+    const frm=e.target;
+
+    if(frm.id.value){
+        const personaEditada=new Persona(
+            parseInt(frm.id.value),
+            frm.nombre.value,
+            frm.email.value,
+            frm.sexo.value
+        );
+
+        agregarSpinner();
+
+        setTimeout(() => {
+            altaPersona(nuevaPersona);
+        }, 2000);
+
+        if(confirm("¿Confirma modificación?")){
+            modificarPersona(personaEditada);
+        }
+    }
+    /*
+    limpiarFormulario(e.target);
     console.log("Dando de alta");
     const frm=e.target;
     console.log(frm.nombre.value);
@@ -121,19 +197,44 @@ function handlerSubmit(e){
     console.log(frm.sexo.value);
     const nuevaPersona=new Persona(Date.now(),frm.nombre.value,frm.email.value,frm.sexo.value);
     console.log(nuevaPersona);
+    */
+}
+
+function agregarSpinner(){
+    let spinner=document.createElement("img");
+    spinner.setAttribute("src","./img/ghost-spinner.gif");
+    spinner.setAttribute("alt","Spinner fantasma");
+
+    document.getElementById("spinner-container").appendChild(spinner);
+}
+
+function eliminarSpinner(){
+    document.getElementById("spinner-container").innerHTML="";
+}
+
+function modificarPersona(p){
+    let index=personas.findIndex((per)=>{
+        return per.id==id;
+    });
+
+    personas.splice(index,1,p);
+    almacenarDatos(personas);
 }
 
 function altaPersona(p){
     personas.push(p);
+    almacenarDatos(personas);
     handlerLoadList();
 }
 
 function handlerLoadList(e){
     renderizarLista(crearLista(personas),document.getElementById('divLista'));
+    /*
     const emisor=e.target;
     emisor.textContent="Remover lista";
     emisor.removeEventListener('click',handlerLoadList);//Remueve manejador del evento
     emisor.addEventListener('click',handlerDeleteList);
+    */
 }
 
 //Elimina lista

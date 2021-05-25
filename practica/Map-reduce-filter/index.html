@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Persona{
+            constructor(nombre,apellido,edad){
+                this.Nombre=nombre;
+                this.Apellido=apellido;
+                this.Edad=edad;
+            }
+            
+            set Nombre(value){
+                this.nombre=value;
+            }
+            
+            set Apellido(value){
+                this.apellido=value;
+            }
+            
+            set Edad(value){
+                this.edad=value;
+            }
+            
+            get Nombre(){
+                return this.nombre;
+            }
+            
+            get Apellido(){
+                return this.apellido;
+            }
+            
+            get Edad(){
+                return this.edad;
+            }
+        }
+
+        const arrayPersonas=[
+            new Persona("Adrian","Lisca",54),
+            new Persona("Viviana","Sciume",50),
+            new Persona("Ezequiel","Lisca",29),
+            new Persona("Ariel","Lisca",25),
+        ];
+
+        console.log(arrayPersonas);
+
+        let sumaEdades=arrayPersonas.map(e=>e.Edad).reduce((p,a)=>{
+            return p+a;
+        },0);
+
+        console.log(sumaEdades);
+    </script>
+    </body>
+</html>
