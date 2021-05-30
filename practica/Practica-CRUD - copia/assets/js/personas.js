@@ -2,12 +2,16 @@
 import {guardarDatos} from './ls.js';
 
 export default class Persona{
-    constructor(id,nombre,apellido,email,edad){
+    constructor(id,nombre,apellido,email,edad,sexo,tatuajes,piercings,otros){
         this.Id=id;
         this.Nombre=nombre;
         this.Apellido=apellido;
         this.Email=email;
         this.Edad=edad;
+        this.Sexo=sexo;
+        this.Tatuajes=tatuajes;
+        this.Piercings=piercings;
+        this.Otros=otros;
     }
 
     set Id(value){
@@ -30,6 +34,22 @@ export default class Persona{
         this.edad=value;
     }
 
+    set Sexo(value){
+        this.sexo=value;
+    }
+
+    set Tatuajes(value){
+        this.tatuajes=value;
+    }
+
+    set Piercings(value){
+        this.piercings=value;
+    }
+
+    set Otros(value){
+        this.otros=value;
+    }
+
     get Id(){
         return this.id;
     }
@@ -48,6 +68,34 @@ export default class Persona{
 
     get Edad(){
         return this.edad;
+    }
+
+    get Sexo(){
+        if(this.sexo)
+            return "Femenino";
+        else
+            return "Masculino";
+    }
+
+    get Tatuajes(){
+        if(this.tatuajes)
+            return "Sí";
+        else
+            return "No";
+    }
+
+    get Piercings(){
+        if(this.piercings)
+            return "Sí";
+        else
+            return "No";
+    }
+
+    get Otros(){
+        if(this.otros)
+            return "Sí";
+        else
+            return "No";
     }
 
     static Equals(persona1,persona2){

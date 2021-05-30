@@ -17,6 +17,12 @@ const inApellido=document.getElementById("idApellido");
 const inEmail=document.getElementById("idEmail");
 const inEdad=document.getElementById("idEdad");
 
+const rdoSexoF=document.getElementById("rSexoF");
+const rdoSexoM=document.getElementById("rSexoM");
+const chkTatuajes=document.getElementById("cTatuajes");
+const chkPiercings=document.getElementById("cPiercings");
+const chkOtros=document.getElementById("cOtros");
+
 const rutaSpinner="./assets/img/spinner-cargando.gif";
 const esperaSpinner=1000;
 
@@ -55,7 +61,11 @@ btnAgregarPers.addEventListener('click',(e)=>{
         inNombre.value,
         inApellido.value,
         inEmail.value,
-        parseInt(inEdad.value)
+        parseInt(inEdad.value),
+        rdoSexoF.checked,
+        chkTatuajes.checked,
+        chkPiercings.checked,
+        chkOtros.checked
     );
 
     crearSpinner(divTablaDatos,rutaSpinner);
@@ -71,10 +81,19 @@ btnModificarPers.addEventListener('click',(e)=>{
         inNombre.value,
         inApellido.value,
         inEmail.value,
-        parseInt(inEdad.value)
+        parseInt(inEdad.value),
+        rdoSexoF.checked,
+        chkTatuajes.checked,
+        chkPiercings.checked,
+        chkOtros.checked
     );
-    Persona.modificarPersona(arrayPersonas,auxPers);
-    renderizarTabla(divTablaDatos,crearTabla(arrayPersonas,false));
+
+    crearSpinner(divTablaDatos,rutaSpinner);
+
+    setTimeout(() => {        
+        Persona.modificarPersona(arrayPersonas,auxPers);
+        renderizarTabla(divTablaDatos,crearTabla(arrayPersonas,false));
+    }, esperaSpinner);
 });
 
 btnEliminarPers.addEventListener('click',(e)=>{
@@ -82,26 +101,37 @@ btnEliminarPers.addEventListener('click',(e)=>{
         inNombre.value,
         inApellido.value,
         inEmail.value,
-        parseInt(inEdad.value)
+        parseInt(inEdad.value),
+        rdoSexoF.checked,
+        chkTatuajes.checked,
+        chkPiercings.checked,
+        chkOtros.checked
     );
-    Persona.bajaPersona(arrayPersonas,auxPers);
-    if(arrayPersonas.length>0)
-        renderizarTabla(divTablaDatos,crearTabla(arrayPersonas,false));
-    else
-        vaciarContenedor(divTablaDatos);
+
+    crearSpinner(divTablaDatos,rutaSpinner);
+
+    setTimeout(() => {        
+        Persona.bajaPersona(arrayPersonas,auxPers);
+        if(arrayPersonas.length>0)
+            renderizarTabla(divTablaDatos,crearTabla(arrayPersonas,false));
+        else
+            vaciarContenedor(divTablaDatos);
+    }, esperaSpinner);
 });
 
 btnEliminarBD.addEventListener('click',(e)=>{
-    borrarDatos();
-    arrayPersonas.splice(0);
-    idArrayPersonas=-1;
-    if(localStorage.length==0)
-        vaciarContenedor(divTablaDatos);
+    crearSpinner(divTablaDatos,rutaSpinner);
+
+    setTimeout(() => {        
+        borrarDatos();
+        arrayPersonas.splice(0);
+        idArrayPersonas=-1;
+        if(localStorage.length==0)
+            vaciarContenedor(divTablaDatos);
+    }, esperaSpinner);
 });
 
-btnResetForm.addEventListener('click',(e)=>{
-
-});
+btnResetForm.addEventListener('click',(e)=>{});
 
 window.addEventListener('click',(e)=>{
     const trMetaData=e.target.parentNode.dataset;
@@ -112,6 +142,12 @@ window.addEventListener('click',(e)=>{
         inApellido.value=trMetaData.apellido;
         inEmail.value=trMetaData.email;
         inEdad.value=trMetaData.edad;
+        
+        rdoSexoF.checked=(trMetaData.sexo=="Femenino");
+        rdoSexoM.checked=(trMetaData.sexo=="Masculino"),
+        chkTatuajes.checked=(trMetaData.tatuajes=="Sí"),
+        chkPiercings.checked=(trMetaData.piercings=="Sí"),
+        chkOtros.checked=(trMetaData.otros=="Sí")        
     }
 });
 

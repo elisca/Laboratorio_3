@@ -1,5 +1,32 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
+
+body{
+    background-color: white;
+}
+
+header,footer{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+    justify-content: space-between;
+    background-color: bisque;
+}
+
+main{
+    background-color: white;
+}
+
 table{
     justify-content: center;
+    text-align: center;
+}
+
+nav{
+    align-self: center;
+    padding-right: 15px;
+}
+
+h1{
     text-align: center;
 }
 
@@ -14,4 +41,32 @@ tr:nth-child(even){
 
 tr:nth-child(odd){
     background-color: darkseagreen;
+}
+
+tr:hover{
+    background-color: darkolivegreen;
+    color: white;
+}
+
+.secDatos{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: white;
+}
+
+.btnForm{
+    border-radius: 3px;
+    padding: 5px;
+    background-color: darkgoldenrod;
+    color: white;
+}
+
+.img_icono{
+    width: 10%;
+    height: 10%;
+}
+
+.img_banner{
+    width: 100%;
 }

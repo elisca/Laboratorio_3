@@ -10,32 +10,96 @@
     <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
 </head>
 <body>
-    <form>
-        <fieldset>
-            <legend>Datos de Persona</legend>
-            <input type="hidden" name="txtId" id="idId">
-            <label for="txtNombre">Nombre:</label>
-            <input type="text" name="txtNombre" id="idNombre" placeholder="Ingrese su nombre..."><br>
-    
-            <label for="txtApellido">Apellido:</label>
-            <input type="text" name="txtApellido" id="idApellido" placeholder="Ingrese su apellido..."><br>
-    
-            <label for="txtEmail">Email</label>
-            <input type="text" name="txtEmail" id="idEmail" placeholder="Ingrese su email..."><br>
-    
-            <label for="txtEdad">Edad</label>
-            <input type="text" name="txtEdad" id="idEdad" placeholder="Ingrese su edad..."><br>
-        </fieldset>
+    <!-- Encabezado -->
+    <header>
+        <!-- Logotipo -->
+        <img src="./assets/img/logo.svg" alt="logo" class="img_icono">
 
-        <fieldset>
-            <legend>Acciones</legend>
-            <input type="submit" id="btnAgregar" value="Agregar persona">
-            <input type="button" id="btnModificar" value="Modificar persona">
-            <input type="button" id="btnEliminar" value="Eliminar persona">
-            <input type="button" id="btnEliminarTodo" value="Eliminar todo">
-            <input type="reset" id="btnReset" value="Restablecer">
-        </fieldset>
-    </form>
-    <div id="divTablaDatos"></div>
+        <!-- Barra de navegación -->
+        <nav>
+            <a href="#" target="_blank">Nosotros</a>
+            <a href="#" target="_blank">Anuncios</a>
+            <a href="#" target="_blank">Blog</a>
+            <a href="#" target="_blank">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>    
+        <!-- Título -->
+        <h1>Administración</h1>
+        
+        <!-- Banner -->
+        <img src="assets/img/banner.jpg" alt="banner" class="img_banner">
+
+        <!-- Formulario ingreso datos -->
+        <section>            
+            <form>
+                <fieldset>
+                    <legend>Información</legend>
+                    <fieldset>                
+                        <legend>Datos de Persona</legend>
+                        <input type="hidden" name="txtId" id="idId">
+                        <label for="txtNombre">Nombre:</label>
+                        <input type="text" name="txtNombre" id="idNombre" placeholder="Ingrese su nombre...">
+                
+                        <label for="txtApellido">Apellido:</label>
+                        <input type="text" name="txtApellido" id="idApellido" placeholder="Ingrese su apellido...">
+                
+                        <label for="txtEmail">Email</label>
+                        <input type="text" name="txtEmail" id="idEmail" placeholder="Ingrese su email...">
+                
+                        <label for="txtEdad">Edad</label>
+                        <input type="text" name="txtEdad" id="idEdad" placeholder="Ingrese su edad...">
+                    </fieldset>
+        
+                    <fieldset>
+                        <legend>Sexo</legend>
+                        <input type="radio" name="radSexo" id="rSexoF" value="F" checked>
+                        <label for="rSexoF"><i class="fa fa-venus" aria-hidden="true"></i> Femenino</label>
+                        <input type="radio" name="radSexo" id="rSexoM" value="M">
+                        <label for="rSexoM"><i class="fa fa-mars" aria-hidden="true"></i> Masculino</label>
+                    </fieldset>
+        
+                    <fieldset>
+                        <legend>Características Adicionales</legend>
+                        <input type="checkbox" name="chkCATatuajes" id="cTatuajes">
+                        <label for="cTatuajes">Tatuajes</label>
+                        <input type="checkbox" name="chkCAPiercings" id="cPiercings">
+                        <label for="cPiercings">Piercings</label>
+                        <input type="checkbox" name="chkCAOtros" id="cOtros">
+                        <label for="cOtros">Otros</label>
+                    </fieldset>
+                </fieldset>
+        
+                <fieldset>
+                    <legend>Acciones</legend>
+                    <button type="submit" class="btnForm" id="btnAgregar"><i class="fa fa-floppy-o" aria-hidden="true"> Agregar persona</i></button>
+                    <button type="button" class="btnForm" id="btnModificar"><i class="fa fa-file-o" aria-hidden="true"> Modificar persona</i></button>
+                    <button type="button" class="btnForm" id="btnEliminar"><i class="fa fa-eraser" aria-hidden="true"> Eliminar persona</i></button>
+                    <button type="button" class="btnForm" id="btnEliminarTodo"><i class="fa fa-chain-broken" aria-hidden="true"></i> Eliminar todo</button>
+                    <button type="reset" class="btnForm" id="btnReset"><i class="fa fa-undo" aria-hidden="true"> Restablecer</i></button>
+                </fieldset>
+            </form>
+        </section>    
+
+        <!-- Tabla de datos -->
+        <section class="secDatos">
+            <div id="divTablaDatos"></div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <!-- Barra de navegación -->
+        <nav>
+            <a href="#" target="_blank">Nosotros</a>
+            <a href="#" target="_blank">Anuncios</a>
+            <a href="#" target="_blank">Blog</a>
+            <a href="#" target="_blank">Contacto</a>
+        </nav>
+        <!-- Firma de Copyright -->
+        <p>Todos los derechos reservados&copy; 2021</p>
+    </footer>
 </body>
 </html>

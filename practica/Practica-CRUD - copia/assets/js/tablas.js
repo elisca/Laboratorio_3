@@ -1,5 +1,5 @@
 export default function crearTabla(array,incluirPie=false,...pie){
-    if(array[0]!=null){      
+    if(array.length>0){
         const table=document.createElement("table");
         const encabezado=crearEncabezado(array[0]);
         const cuerpo=crearCuerpo(array);
