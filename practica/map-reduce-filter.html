@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Persona{
+            constructor(nombre,apellido,sexo,edad){
+                this.nombre=nombre;
+                this.apellido=apellido;
+                this.sexo=sexo;
+                this.edad=edad;
+            }
+        }
+
+        const personas=[new Persona("Adrian","Papa","Masculino",54),
+            new Persona("Viviana","Mama","Femenino",50),
+            new Persona("Ezequiel","Yo","Masculino",29),
+            new Persona("Ariel","Hermano","Masculino",25),
+        ];
+
+        let mapeado=personas.map(e=>{
+            return identificar(e.sexo);
+        });
+
+        function identificar(valor){
+            if(valor=="Masculino")
+                return "Es hombre";
+            else if(valor=="Femenino")
+                return "Es mujer";
+            else
+                return "Error";
+        }
+
+        let filtrado=personas.filter((e,valor,indice,array)=>{
+            console.warn(`Valor: ${valor} Indice: ${indice} Array: ${array}`);
+            return e.sexo=="Masculino";
+        });   
+
+        let reduccion=personas.reduce(function(cont,persona){
+            return cont+=persona.edad;
+        },0);
+
+        console.warn(personas);
+        console.warn(mapeado);
+        console.warn(filtrado);
+        console.warn(reduccion);
+    </script>
+</body>
+</html>

@@ -37,38 +37,56 @@
             <form>
                 <fieldset>
                     <legend>Información</legend>
-                    <fieldset>                
+                    <fieldset class="flsSubForm">                
                         <legend>Datos de Persona</legend>
                         <input type="hidden" name="txtId" id="idId">
-                        <label for="txtNombre">Nombre:</label>
-                        <input type="text" name="txtNombre" id="idNombre" placeholder="Ingrese su nombre...">
+                        <div>
+                            <label for="txtNombre">Nombre:</label>
+                            <input type="text" name="txtNombre" id="idNombre" placeholder="Ingrese su nombre...">
+                        </div>
                 
-                        <label for="txtApellido">Apellido:</label>
-                        <input type="text" name="txtApellido" id="idApellido" placeholder="Ingrese su apellido...">
+                        <div>                            
+                            <label for="txtApellido">Apellido:</label>
+                            <input type="text" name="txtApellido" id="idApellido" placeholder="Ingrese su apellido...">
+                        </div>
                 
-                        <label for="txtEmail">Email</label>
-                        <input type="text" name="txtEmail" id="idEmail" placeholder="Ingrese su email...">
+                        <div>                            
+                            <label for="txtEmail">Email</label>
+                            <input type="text" name="txtEmail" id="idEmail" placeholder="Ingrese su email...">
+                        </div>
                 
-                        <label for="txtEdad">Edad</label>
-                        <input type="text" name="txtEdad" id="idEdad" placeholder="Ingrese su edad...">
+                        <div>                            
+                            <label for="txtEdad">Edad</label>
+                            <input type="text" name="txtEdad" id="idEdad" placeholder="Ingrese su edad...">
+                        </div>
                     </fieldset>
         
-                    <fieldset>
+                    <fieldset class="flsSubForm">
                         <legend>Sexo</legend>
-                        <input type="radio" name="radSexo" id="rSexoF" value="F" checked>
-                        <label for="rSexoF"><i class="fa fa-venus" aria-hidden="true"></i> Femenino</label>
-                        <input type="radio" name="radSexo" id="rSexoM" value="M">
-                        <label for="rSexoM"><i class="fa fa-mars" aria-hidden="true"></i> Masculino</label>
+                        <div>                            
+                            <input type="radio" name="radSexo" id="rSexoF" value="F" checked>
+                            <label for="rSexoF"><i class="fa fa-female" aria-hidden="true"></i> Femenino</label>
+                        </div>
+                        <div>                            
+                            <input type="radio" name="radSexo" id="rSexoM" value="M">
+                            <label for="rSexoM"><i class="fa fa-male" aria-hidden="true"></i> Masculino</label>
+                        </div>
                     </fieldset>
         
-                    <fieldset>
+                    <fieldset class="flsSubForm">
                         <legend>Características Adicionales</legend>
-                        <input type="checkbox" name="chkCATatuajes" id="cTatuajes">
-                        <label for="cTatuajes">Tatuajes</label>
-                        <input type="checkbox" name="chkCAPiercings" id="cPiercings">
-                        <label for="cPiercings">Piercings</label>
-                        <input type="checkbox" name="chkCAOtros" id="cOtros">
-                        <label for="cOtros">Otros</label>
+                        <div>                            
+                            <input type="checkbox" name="chkCATatuajes" id="cTatuajes">
+                            <label for="cTatuajes">Tatuajes</label>
+                        </div>
+                        <div>                            
+                            <input type="checkbox" name="chkCAPiercings" id="cPiercings">
+                            <label for="cPiercings">Piercings</label>
+                        </div>
+                        <div>                            
+                            <input type="checkbox" name="chkCAOtros" id="cOtros">
+                            <label for="cOtros">Otros</label>
+                        </div>
                     </fieldset>
                 </fieldset>
         
@@ -99,7 +117,7 @@
             <a href="#" target="_blank">Contacto</a>
         </nav>
         <!-- Firma de Copyright -->
-        <p>Todos los derechos reservados&copy; 2021</p>
+        <p class="pieCopyright">Todos los derechos reservados&copy; 2021</p>
     </footer>
 </body>
 </html>
