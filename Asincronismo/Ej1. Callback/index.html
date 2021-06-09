@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+</head>
+<body>
+    <script>
+        function sumar(a,b,callback){
+            let suma;
+            setTimeout(() => {
+                suma=a+b;
+                console.log("Tengo el resultado de la suma: " + suma);
+                callback(suma);//Le paso al callback el valor, esa función sabe que hacer con el resultado
+            }, 1500);
+        }
+
+        function cuadrado(a,callback){
+            let cuad;
+            setTimeout(() => {
+                cuad=a*a;
+                console.log("Tengo el resultado del cuadrado: " + cuad);
+                callback(cuad);//Le paso al callback el valor, esa función sabe que hacer con el resultado
+            }, 1000);
+        }
+
+        function producto(a,b,callback){
+            let prod;
+            setTimeout(() => {
+                prod=a*b;
+                console.log("Tengo el resultado del producto: " + prod);
+                callback(prod);//Le paso al callback el valor, esa función sabe que hacer con el resultado
+            }, 3000);
+        }
+
+        // Llamadas sincrónicas y funciones bloqueantes
+        // let suma=sumar(4,3);
+        // let cuad=cuadrado(suma);
+
+        // let resultado=producto(cuad,10);
+        // console.log(resultado);
+
+        // Llamadas sincrónicas y funciones no bloqueantes
+        sumar(4,3,(s)=>{//"s" es el parámetro de callback que recibe en el tercer parámetro "sumar"
+            cuadrado(s,(c)=>{
+                producto(c,10,(p)=>{
+                    console.log(p);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

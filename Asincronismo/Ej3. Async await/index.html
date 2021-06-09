@@ -1,0 +1,81 @@
+<!-- try-catch funciona mal -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await</title>
+</head>
+<body>
+    <script>
+        function sumar(a,b){
+            let suma;
+
+            return new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    if(typeof a!=="number" || typeof b!=="number")//typeof unario devuelve string con tipo
+                        reject("Parámetros inválidos para la suma");
+                    else
+                        resolve(a+b);
+                }, 1500);
+            });
+        }
+
+        function cuadrado(a){
+            let cuad;
+
+            return new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    if(typeof a!=="number")//typeof unario devuelve string con tipo
+                        reject("Parámetros inválidos para el cuadrado");
+                    else
+                        resolve(a*a);
+                }, 1500);
+            });
+        }
+
+        function producto(a,b){
+            let prod;
+
+            return new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    if(typeof a!=="number" || typeof b!=="number")//typeof unario devuelve string con tipo
+                    reject("Parámetros inválidos para el producto");
+                    else
+                        resolve(a*b);
+                    }, 1500);
+                });
+        }
+         
+        console.log("Inicio");
+        realizarOperaciones();
+        console.log("Fin");
+
+        async function realizarOperaciones(){                
+            try {
+                let suma=await sumar(4,3);
+                let cuad=await cuadrado(suma);
+    
+                let resultado=await producto(cuad,10);
+                console.log(resultado);                
+            } catch (error) {
+                console.error("Error");
+            }
+        }
+
+        // Funcion asincrona anonima
+        // const realizarOp=async ()=>{
+        //     try {
+        //         let suma=await sumar(4,3);
+        //         let cuad=await cuadrado(suma);
+    
+        //         let resultado=await producto(cuad,10);
+        //         console.log(resultado);                
+        //     } catch (error) {
+        //         console.error("Error");
+        //     }
+        // }
+    </script>
+</body>
+</html>

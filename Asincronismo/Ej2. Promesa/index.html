@@ -1,0 +1,88 @@
+<!-- try-catch funciona mal -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promesa</title>
+</head>
+<body>
+    <script>
+        function sumar(a,b){
+            let suma;
+
+            return new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    if(typeof a!=="number" || typeof b!=="number")//typeof unario devuelve string con tipo
+                        reject("Parámetros inválidos para la suma");
+                    else
+                        resolve(a+b);
+                }, 1500);
+            });
+        }
+
+        function cuadrado(a){
+            let cuad;
+
+            return new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    if(typeof a!=="number")//typeof unario devuelve string con tipo
+                        reject("Parámetros inválidos para el cuadrado");
+                    else
+                        resolve(a*a);
+                }, 1500);
+            });
+        }
+
+        function producto(a,b){
+            let prod;
+
+            return new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    if(typeof a!=="number" || typeof b!=="number")//typeof unario devuelve string con tipo
+                        reject("Parámetros inválidos para el producto");
+                    else
+                        resolve(a*b);
+                }, 1500);
+            });
+        }
+
+        //Promesas encadenadas
+        sumar(4,3)//Promesa de suma
+        .then(suma=>cuadrado(suma))
+        .then((cuad)=>{//Promesa de cuadrado pasa a suma
+            return (producto(cuad,10))
+        })
+        .then((resultado)=>{//Promesa de producto pasa a cuadrado
+            console.log("El resultado es: " + resultado);
+        })
+        .catch((error)=>{//Maneja cualquiera de las promesas
+            console.error("Error");
+        });//";" al final del encadenado
+
+        // Ejemplo de promesa
+        // function miFuncion(a){
+        //     return new Promise((res,rej)=>{
+        //         setTimeout(() => {                    
+        //             if(a>0){
+        //                 res("Todo bien");
+        //             }
+        //             else{
+        //                 rej("Todo mal");
+        //             }
+        //         }, 2000);
+        //     });
+        // }
+
+        // miFuncion(10)//Función con promesa
+        // //then y catch esperan callbacks
+        // .then(respuesta=>{//Promesa resuelta
+        //     console.log(respuesta);
+        // })
+        // .catch(error=>{//Promesa rechazada
+        //     console.error(error);
+        // })
+    </script>
+</body>
+</html>
