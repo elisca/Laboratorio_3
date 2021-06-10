@@ -1,4 +1,3 @@
-//El inicializador no se carga, no toma el evento
 import Persona from './personas.js';
 import {cargarDatos,guardarDatos,borrarDato,borrarDatos} from './ls.js';
 import crearTabla from './tablas.js';
