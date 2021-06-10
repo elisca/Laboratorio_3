@@ -87,8 +87,6 @@ btnModificarPers.addEventListener('click',(e)=>{
         chkOtros.checked
     );
 
-    console.info(auxPers);
-
     crearSpinner(divTablaDatos,rutaSpinner);
 
     setTimeout(() => {        
