@@ -174,6 +174,8 @@ export default class Persona{
     static modificarPersona(array,item){
         let id=Persona.ObtenerIndicePorId(array,item);
         array[id]=item;
+        console.info(item);
+        console.info(array[id]);
         guardarDatos("arrayPersonas",array);
         alert("Persona modificada satisfactoriamente.");
     }

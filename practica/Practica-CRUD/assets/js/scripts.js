@@ -87,6 +87,8 @@ btnModificarPers.addEventListener('click',(e)=>{
         chkOtros.checked
     );
 
+    console.info(auxPers);
+
     crearSpinner(divTablaDatos,rutaSpinner);
 
     setTimeout(() => {        
@@ -121,13 +123,16 @@ btnEliminarPers.addEventListener('click',(e)=>{
 btnEliminarBD.addEventListener('click',(e)=>{
     crearSpinner(divTablaDatos,rutaSpinner);
 
-    setTimeout(() => {        
+    setTimeout(() => {     
+        vaciarContenedor(divTablaDatos);
         borrarDatos();
-        arrayPersonas.splice(0);
-        idArrayPersonas=-1;
-        if(localStorage.length==0)
-            vaciarContenedor(divTablaDatos);
+        if(localStorage.length==0){
+            arrayPersonas.splice(0);
+            idArrayPersonas=-1;
+        }
+        renderizarTabla(divTablaDatos,crearTabla(arrayPersonas,false));
     }, esperaSpinner);
+
 });
 
 btnResetForm.addEventListener('click',(e)=>{});
