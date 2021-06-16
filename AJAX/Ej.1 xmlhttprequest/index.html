@@ -1,0 +1,167 @@
+<!-- Revisar renglones de spinner -->
+<!-- Aplicar spinners en todos los casos -->
+<!-- Agregar finally a los try y then -->
+<!-- La desestructuracion AJAX falla con la URL -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML HTTP Request</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <button id="btnDatos">Traer datos AJAX</button>
+    <br>
+    <button id="btnDatosFetch">Traer datos Fetch</button>
+    <br>
+    <button id="btnDatosAsync">Traer datos Aync</button>
+    <br>
+    <button id="btnDatosAxios">Traer datos Axios</button>
+    <br>
+    <button id="btnDatosAxiosAsync">Traer datos Axios async</button>
+
+    <div class="spinner"></div>
+
+    <style>
+        .spinner{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            background-color: burlywood;
+        }
+    </style>
+
+    <script type="module">
+        let data=[];
+
+        btnDatos.addEventListener("click",e=>{
+            getDatosAjax();
+        });
+
+        btnDatosFetch.addEventListener("click",e=>{
+            getDatosFetch();
+        });
+
+        btnDatosAsync.addEventListener("click",e=>{
+            getDatosAsync();
+        });
+
+        btnDatosAxios.addEventListener("click",e=>{
+            getDatosAxios();
+        });
+
+        btnDatosAxiosAsync.addEventListener("click",e=>{
+            getDatosAxiosAsync();
+        });
+
+        const createSpinner=()=>{
+            const spinner=document.createElement("img");
+            spinner.setAttribute("src","./assets/img/spinner-cargando.gif");
+            spinner.setAttribute("alt","Spinner cargando");
+            return spinner;
+        };
+
+        //AJAX
+        const getDatosAjax=(options)=>{
+
+            const {url,method,success,error,final}=options;//Desestructuracion
+            //Instanciar el objeto xmlhttprequest
+            const xhr=new XMLHttpRequest();
+            //Agregar manejador de evento para cada cambio de estado
+            //0-Sin enviar 1-Abierto 2-Encabezado recibido 3-Cargando 4-Listo
+            
+            //Manera 1
+            // xhr.onreadystatechange=()=>{
+
+                // };
+                
+                //Manera 2
+                xhr.addEventListener("readystatechange",()=>{
+
+                document.querySelector(".spinner").appendChild(createSpinner());
+                //En caso de estar lista la peticion
+                if(xhr.readyState==4){
+                    //En caso de que la peticion sea correcta
+                    if(xhr.status>=200 && xhr.status<300){
+                        //success();
+                        const data=JSON.parse(xhr.responseText);
+                        console.log(data);
+                    }
+                    //En caso de que la peticion sea incorrecta
+                    else{
+                        //error();
+                        const statusText=xhr.statusText || "Ocurrió un error";
+                        console.error(`ERROR: ${xhr.status}: ${statusText}`);
+                    }
+                    //final();  
+                }
+                //En caso de no estar lista la peticion
+                else{
+                }
+                document.querySelector(".spinner").removeChild(document.querySelector(".spinner").firstElementChild());
+            });
+
+            //Abrir peticion
+            //Metodo, URL y luego si es asincrona(por default y opcional)
+            xhr.open("GET","https://jsonplaceholder.typicode.com/users");
+
+            //Enviar la peticion
+            xhr.send();
+        };
+
+        //Fetch
+        const getDatosFetch=()=>{
+            fetch("http://localhost:5000/cocineros")
+            .then((res)=>{
+                return res.ok?res.json():Promise.reject(res);//La respuesta se desenpaqueta aqui
+            })
+            .then((data)=>{
+                console.log(data);
+            })
+            .catch(err=>{
+                console.error(`${err.status}: ${err.statusText}`);
+            });
+        };
+
+        //Async
+        const getDatosAsync=async()=>{
+            try{
+                const res=await fetch("http://localhost:5000/cocineros");
+                if(!res.ok){
+                    throw new Error("Ocurrió un error");
+                }
+                data=res.json();
+                console.log(data);
+            }
+            catch(error){
+                console.log(error);
+            }
+        };
+
+        //Axios
+        const getDatosAxios=async()=>{
+            axios.get("http://localhost:5000/cocineros")
+            .then((res)=>{
+                console.log(res);
+            })
+            .catch(err=>{
+                console.log(err);
+            });
+        }
+
+        //Axios async
+        const getDatosAxiosAsync=async()=>{
+            try{
+                let res=await axios.get("http://localhost:5000/cocineros");
+                console.log(res);
+            }
+            catch(error){
+                console.log(error.response);
+            }
+        }        
+    </script>
+</body>
+</html>
