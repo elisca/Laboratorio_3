@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <title>Bootstrap</title>
+</head>
+<body>
+    <div class="container">        
+        <!-- Existen display-1 hasta display-4 para que un parrafo sea como un h1,etc -->
+        <h1>Hola mundo</h1>
+        <p class="h1">Hola mundo</p>
+        <h1 class="display-1">Hola mundo</h1>
+        <p class="display-1">Hola mundo</p>
+        <p class="small">Hola mundo</p>
+
+        <!-- Saca sangria y estilo -->
+        <ul class="list-unstyled">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+            <li>Item 5</li>
+        </ul>
+        <hr>
+        <!-- Queda como lista con estilo predeterminado -->
+        <ul class="list-inline">
+            <!-- Los items deben llevar esa clase -->
+            <li class="list-inline-item">Item 1</li>
+            <li class="list-inline">Item 2</li>
+            <li class="list-inline">Item 3</li>
+            <li class="list-inline">Item 4</li>
+            <li class="list-inline">Item 5</li>
+        </ul>
+        <hr>
+        <!-- Aplica estilo -->
+        <blockquote class="blockquote text-center text-uppercase">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea provident placeat dolores dolorum, laborum dignissimos quod. Doloribus commodi soluta nihil provident, at earum ipsum culpa iusto, consequuntur nam eius perferendis.
+            Adipisci ut soluta animi dolorem perferendis possimus, eum voluptatum voluptatibus esse unde mollitia libero veritatis ducimus molestias minima culpa maiores ab dolores, amet earum quaerat vero ea facilis odit! Similique?
+            Et eius voluptates fugiat quos aspernatur sit corrupti vero laudantium molestiae cumque veritatis, error vel nemo expedita earum. Et velit cumque accusamus officia possimus nemo tenetur cum iste quasi dolor.
+            Temporibus, et ratione reiciendis voluptatum non recusandae magni eligendi excepturi iusto illum perferendis totam expedita dolor molestias saepe. Aspernatur quia natus magnam quas facilis, officia possimus corrupti odit sunt quisquam.
+            Natus soluta inventore placeat molestias porro distinctio fugiat, nisi veritatis dolorum iure. Dicta, earum doloribus? Suscipit, corporis? Consequuntur voluptas, labore consequatur corporis quaerat, quo, temporibus at aspernatur error architecto ad!
+            <footer class="blockquote-footer">Referencia a la fuente <cite>Cita</cite></footer>
+        </blockquote>
+
+        <hr>
+
+        <p class="mark">Esto es un parrafo</p>
+
+        <hr>
+
+        <!-- Sr./Sra. lleva esa clase para dar referencia-->
+        <abbr title="Señor" class="initialize">Sr.</abbr>
+
+        <hr>
+
+        <code>
+            console.log("Hola mundo");
+        </code>
+
+        <hr>
+
+        <!-- Respeta estilo de texto y agrega scroll -->
+        <pre class="pre-scrollable">
+            <code>
+                let btnDesordenar=document.querySelector("#btnDesordenar");
+
+                btnDesordenar.addEventListener('click',()=>{
+                    let columnas=document.querySelectorAll(".container>div:first-child>div.col");
+                    columnas[0].classList.add("order-3");
+                    columnas[1].classList.add("order-1");
+                    columnas[2].classList.add("order-2");
+                    columnas[0].classList.add("order-3");
+                    columnas[1].classList.add("order-1");
+                    columnas[2].classList.add("order-2");
+                    columnas[0].classList.add("order-3");
+                    columnas[1].classList.add("order-1");
+                    columnas[2].classList.add("order-2");
+                    columnas[0].classList.add("order-3");
+                    columnas[1].classList.add("order-1");
+                    columnas[2].classList.add("order-2");
+                    columnas[0].classList.add("order-3");
+                    columnas[1].classList.add("order-1");
+                    columnas[2].classList.add("order-2");
+                    columnas[0].classList.add("order-3");
+                    columnas[1].classList.add("order-1");
+                    columnas[2].classList.add("order-2");
+                    columnas[0].classList.add("order-3");
+                    columnas[1].classList.add("order-1");
+                    columnas[2].classList.add("order-2");
+                    columnas[0].classList.add("order-3");
+                    columnas[1].classList.add("order-1");
+                    columnas[2].classList.add("order-2");
+                    columnas[0].classList.add("order-3");
+                    columnas[1].classList.add("order-1");
+                    columnas[2].classList.add("order-2");
+                    columnas[0].classList.add("order-3");
+                    columnas[1].classList.add("order-1");
+                    columnas[2].classList.add("order-2");
+                });
+            </code>
+        </pre>
+    </div>
+</body>
+</html>

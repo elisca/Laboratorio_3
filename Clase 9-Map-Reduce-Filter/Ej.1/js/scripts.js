@@ -1,5 +1,3 @@
-//Corregir funcion vaciarContenedor...
-//Revisar funcion handlerDeleteList...
 import {marcas} from './marcas.js';
 
 /*
@@ -56,8 +54,8 @@ function vaciarContenedor(contenedor){
     //contenedor.innerHTML="";Limpia el contenedor de manera precaria
 
     //Limpia el contenedor liberando también nodos en memoria
-    while(contenedor.hasChildNode){//Mientras tenga nodos hijos...
-        contenedor.removerChild(contenedor.firstChildNode);//Remueve el primer nodo hijo
+    while(contenedor.hasChildNodes()){//Mientras tenga nodos hijos...
+        contenedor.removeChild(contenedor.firstChild);//Remueve el primer nodo hijo
     }
 }
 

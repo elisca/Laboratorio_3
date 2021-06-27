@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map,reduce y filter</title>
+</head>
+<body>
+    <script>
+        const numeros=[10,20,30,40,50,60,70,80,90];
+
+        function buscarMenores50(numero){
+            return numero<50;
+        }
+
+        function buscarMayores50(numero){
+            return numero>50;
+        }
+
+        function dividirDos(numero){
+            return numero/2;
+        }
+
+        function reducirNumeros(previo,actual){
+            return previo+actual;
+        }
+
+        console.log(numeros.findIndex(buscarMenores50));
+        console.log(numeros.findIndex(buscarMayores50));
+        console.log(numeros.find(buscarMayores50));
+        console.log(numeros.map(dividirDos));
+        console.log(numeros.filter(buscarMayores50));
+        console.log(numeros.reduce(reducirNumeros,0));
+        
+        let promTotal=numeros.reduce(reducirNumeros,0);
+        promTotal/=numeros.length;
+        console.info(`Promedio: ${promTotal}`);
+    </script>    
+</body>
+</html>

@@ -17,13 +17,30 @@
     <br>
     <button id="btnDatosFetch">Traer datos Fetch</button>
     <br>
+    <button id="btnDatosFetchAlta">Crear datos Fetch</button>
+    <br>
+    <button id="btnDatosFetchModificar">Modificar datos Fetch</button>
+    <br>
+    <button id="btnDatosFetchBaja">Eliminar datos Fetch</button>
+    <br>
     <button id="btnDatosAsync">Traer datos Aync</button>
+    <br>
+    <button id="btnDatosAsyncAlta">Crear datos Aync</button>
+    <br>
+    <button id="btnDatosAsyncBaja">Eliminar datos Aync</button>
     <br>
     <button id="btnDatosAxios">Traer datos Axios</button>
     <br>
+    <button id="btnDatosAxiosAlta">Crear datos Axios</button>
+    <br>
+    <button id="btnDatosAxiosModificar">Modificar datos Axios</button>
+    <br>
+    <button id="btnDatosAxiosBaja">Baja datos Axios</button>
+    <br>
     <button id="btnDatosAxiosAsync">Traer datos Axios async</button>
     <br>
-    <button id="btnDatosAxiosAsyncAlta">Postear datos Axios async</button>
+    <button id="btnDatosAxiosAsyncAlta">Crear datos Axios async</button>
+    <br>
 
     <div class="spinner"></div>
 
@@ -48,12 +65,44 @@
             getDatosFetch();
         });
 
+        btnDatosFetchAlta.addEventListener("click",e=>{
+            postDatosFetch();
+        });
+
+        btnDatosFetchBaja.addEventListener("click",e=>{
+            deleteDatosFetch();
+        });
+
+        btnDatosFetchModificar.addEventListener("click",e=>{
+            putDatosFetch();
+        });        
+                
         btnDatosAsync.addEventListener("click",e=>{
             getDatosAsync();
         });
 
+        btnDatosAsyncAlta.addEventListener("click",e=>{
+            postDatosAsync();
+        });
+
+        btnDatosAsyncBaja.addEventListener("click",e=>{
+            deleteDatosAsync();
+        });
+        
         btnDatosAxios.addEventListener("click",e=>{
             getDatosAxios();
+        });
+
+        btnDatosAxiosAlta.addEventListener("click",e=>{
+            postDatosAxios();
+        });
+
+        btnDatosAxiosModificar.addEventListener("click",e=>{
+            putDatosAxios();
+        });
+
+        btnDatosAxiosBaja.addEventListener("click",e=>{
+            deleteDatosAxios();
         });
 
         btnDatosAxiosAsync.addEventListener("click",e=>{
@@ -132,6 +181,72 @@
             });
         };
 
+        //Fetch
+        const nuevoCocinero1={
+                nombre:"Candela",
+                especialidad:"Milanesas"
+            };
+
+        const options1={
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json;charset=utf-8"
+            },
+            body:JSON.stringify(nuevoCocinero1)
+        };
+
+        const postDatosFetch=()=>{
+            fetch("http://localhost:5000/cocineros/",options1)
+            .then((res)=>{
+                return res.ok?res.json():Promise.reject(res);//La respuesta se desenpaqueta aqui
+            })
+            .then((data)=>{
+                console.log(data);
+            })
+            .catch(err=>{
+                console.error(`${err.status}: ${err.statusText}`);
+            });
+        };
+
+        const Cocinero3={
+                nombre:"German",
+                especialidad:"Pato"
+            };
+
+        const options3={
+            method:"PUT",
+            headers:{
+                "Content-Type":"application/json;charset=utf-8"
+            },
+            body:JSON.stringify(Cocinero3)
+        };
+
+        const putDatosFetch=()=>{
+            fetch("http://localhost:5000/cocineros" + 5)
+            .then((res)=>{
+                return res.ok?res.json():Promise.reject(res);//La respuesta se desenpaqueta aqui
+            })
+            .then((data)=>{
+                console.log(data);
+            })
+            .catch(err=>{
+                console.error(`${err.status}: ${err.statusText}`);
+            });
+        };
+
+        const deleteDatosFetch=()=>{
+            fetch("http://localhost:5000/cocineros/" + 5,{method:"DELETE"})
+            .then((res)=>{
+                return res.ok?res.json():Promise.reject(res);//La respuesta se desenpaqueta aqui
+            })
+            .then((data)=>{
+                console.log(data);
+            })
+            .catch(err=>{
+                console.error(`${err.status}: ${err.statusText}`);
+            });
+        };
+
         //Async
         const getDatosAsync=async()=>{
             try{
@@ -147,9 +262,107 @@
             }
         };
 
+        const nuevoCocinero2={
+                nombre:"Gaston",
+                especialidad:"Rabas"
+            };
+
+        const options2={
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json;charset=utf-8"
+            },
+            body:JSON.stringify(nuevoCocinero2)
+        };
+
+        const postDatosAsync=async()=>{
+            try{
+                const res=await fetch("http://localhost:5000/cocineros",options2);
+                if(!res.ok){
+                    throw new Error("Ocurrió un error");
+                }
+                data=res.json();
+                console.log(data);
+            }
+            catch(error){
+                console.log(error);
+            }
+        };
+
+        const deleteDatosAsync=async()=>{
+            try{
+                const res=await fetch("http://localhost:5000/cocineros" + 5,{method:"DELETE"});
+                if(!res.ok){
+                    throw new Error("Ocurrió un error");
+                }
+                data=res.json();
+                console.log(data);
+            }
+            catch(error){
+                console.log(error);
+            }
+        };
+
         //Axios
         const getDatosAxios=async()=>{
             axios.get("http://localhost:5000/cocineros")
+            .then((res)=>{
+                console.log(res);
+            })
+            .catch(err=>{
+                console.log(err);
+            });
+        }
+
+        const postDatosAxios=async()=>{
+            const nuevoCocinero={
+                nombre:"Georgina",
+                especialidad:"Sopa"
+            };
+
+            /*
+            const options={
+                method:"POST",
+                body: nuevoCocinero
+            };
+
+            axios("http://localhost:5000/cocineros",options)
+            */
+            axios.post("http://localhost:5000/cocineros",nuevoCocinero)
+            .then((res)=>{
+                console.log(res);
+            })
+            .catch(err=>{
+                console.log(err);
+            });
+        }
+
+        const putDatosAxios=async()=>{
+            const nuevoCocinero={
+                nombre:"Donato",
+                especialidad:"Pizza"
+            };
+
+            /*
+            const options={
+                id:1,
+                method:"PUT",
+                body: nuevoCocinero
+            };
+
+            axios("http://localhost:5000/cocineros",options)
+            */
+            axios.put("http://localhost:5000/cocineros/" + 1,{nombre:"Donato",especialidad:"Pizza"})
+            .then((res)=>{
+                console.log(res);
+            })
+            .catch(err=>{
+                console.log(err);
+            });
+        }
+
+        const deleteDatosAxios=async()=>{
+            axios.delete("http://localhost:5000/cocineros/" + 1)
             .then((res)=>{
                 console.log(res);
             })

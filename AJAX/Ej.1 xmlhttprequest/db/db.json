@@ -1,19 +1,34 @@
 {
-    "cocineros":[
-        {
-            "id":1,
-            "nombre":"Donato",
-            "especialidad":"Pastas"
-        },
-        {
-            "id":2,
-            "nombre":"German",
-            "especialidad":"Verduras"
-        },
-        {
-            "id":3,
-            "nombre":"Damian",
-            "especialidad":"Postres"
-        }
-    ]
+  "cocineros": [
+    {
+      "id": 1,
+      "nombre": "Donato",
+      "especialidad": "Pastas"
+    },
+    {
+      "id": 2,
+      "nombre": "German",
+      "especialidad": "Verduras"
+    },
+    {
+      "id": 3,
+      "nombre": "Damian",
+      "especialidad": "Postres"
+    },
+    {
+      "nombre": "Candela",
+      "especialidad": "Milanesas",
+      "id": 4
+    },
+    {
+      "nombre": "Candela",
+      "especialidad": "Milanesas",
+      "id": 5
+    },
+    {
+      "nombre": "Gaston",
+      "especialidad": "Rabas",
+      "id": 6
+    }
+  ]
 }

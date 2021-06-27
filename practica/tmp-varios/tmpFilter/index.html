@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+</head>
+<body>
+    <script>
+        const personas=[{"id":1,"nombre":"Tami","apellido":"Romer","email":"tromer0@miibeian.gov.cn","sexo":"Genderqueer"},
+{"id":2,"nombre":"Trstram","apellido":"Koenraad","email":"tkoenraad1@answers.com","sexo":"Genderfluid"},
+{"id":3,"nombre":"Devina","apellido":"Biddiss","email":"dbiddiss2@mayoclinic.com","sexo":"Non-binary"},
+{"id":4,"nombre":"Rhianna","apellido":"Dougal","email":"rdougal3@ning.com","sexo":"Agender"},
+{"id":5,"nombre":"Wilfred","apellido":"Haysom","email":"whaysom4@psu.edu","sexo":"Genderqueer"},
+{"id":6,"nombre":"Fritz","apellido":"Pimmocke","email":"fpimmocke5@sciencedirect.com","sexo":"Non-binary"},
+{"id":7,"nombre":"Melisandra","apellido":"Pirouet","email":"mpirouet6@networksolutions.com","sexo":"Genderqueer"},
+{"id":8,"nombre":"Imojean","apellido":"Smalles","email":"ismalles7@yelp.com","sexo":"Genderqueer"},
+{"id":9,"nombre":"Nydia","apellido":"Beckhouse","email":"nbeckhouse8@php.net","sexo":"Male"},
+{"id":10,"nombre":"Emelen","apellido":"Walczynski","email":"ewalczynski9@sciencedirect.com","sexo":"Male"},
+{"id":11,"nombre":"Marcie","apellido":"Rudram","email":"mrudrama@state.tx.us","sexo":"Genderqueer"},
+{"id":12,"nombre":"Shay","apellido":"O'Dreain","email":"sodreainb@artisteer.com","sexo":"Female"},
+{"id":13,"nombre":"Elissa","apellido":"Rawcliffe","email":"erawcliffec@go.com","sexo":"Genderfluid"},
+{"id":14,"nombre":"Remy","apellido":"Wincott","email":"rwincottd@bbc.co.uk","sexo":"Male"},
+{"id":15,"nombre":"Eb","apellido":"Friel","email":"efriele@webeden.co.uk","sexo":"Polygender"},
+{"id":16,"nombre":"Mollie","apellido":"Cadagan","email":"mcadaganf@ihg.com","sexo":"Bigender"},
+{"id":17,"nombre":"Monti","apellido":"Bastistini","email":"mbastistinig@ftc.gov","sexo":"Genderqueer"},
+{"id":18,"nombre":"Ernestus","apellido":"Botting","email":"ebottingh@sogou.com","sexo":"Genderfluid"},
+{"id":19,"nombre":"Susie","apellido":"Burkart","email":"sburkarti@google.it","sexo":"Polygender"},
+{"id":20,"nombre":"Aileen","apellido":"Boig","email":"aboigj@seesaa.net","sexo":"Female"}];
+
+        console.warn(mostrarEmails17Mas(personas));
+        console.warn(mostrarSoloNombres(personas));
+        console.warn(mostrarSoloNombres2(personas));
+        console.warn(sumarIds(personas));
+
+        // Aplica Filter
+        function mostrarEmails17Mas(array){
+            let arrayEmails=[];
+            
+            arrayEmails=array.filter((e)=>{
+                return e.email.length>17;
+            });
+
+            return arrayEmails;
+        }
+
+        // Aplica Map
+        function mostrarSoloNombres(array){
+            let arrayNombres=[];
+
+            arrayNombres=personas.map((p)=>{
+                return p.nombre;
+            });
+
+            return arrayNombres;
+        }
+
+        // Aplica Map reducido
+        function mostrarSoloNombres2(array){
+            let arrayNombres=personas.map(p=>p.nombre);
+
+            return arrayNombres;
+        }
+
+        // Aplica Reduce
+        function sumarIds(array){
+            let acumIds=0;
+            // Se separan los ids en un array
+            let arrayIds=array.map(p=>p.id);
+
+            // Reducimos ids
+            acumIds=arrayIds.reduce((p,a)=>{
+                return p+a
+            },0);
+
+            return acumIds;
+        }
+    </script>
+</body>
+</html>
