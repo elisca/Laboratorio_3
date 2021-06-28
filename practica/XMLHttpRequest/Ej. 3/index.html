@@ -5,28 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JSON Server</title>
+    <!-- Script -->
     <script src="./scripts.js" defer></script>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./assets/css/estilos.css">
 
     <!-- Libreria Axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
-    <button id="btnXHRPersonas">1. XHR-Traer Personas</button>
-    <br>
-    <button id="btnFetchPersonas">2. Fetch-Traer Personas</button>
-    <br>
-    <button id="btnAsyncPersonas">3. Async Fetch-Traer Personas</button>
-    <br>
-    <button id="btnAxiosPersonas">4. Axios-Traer Personas</button>
-    <br>
-    <button id="btnAsyncAxiosPersonas">5. Async Axios-Traer Personas</button>
-    <br>
-    <button id="btnPostXHRPersonas">6. Post XHR-Crear Persona</button>
-    <br>
-    <button id="btnDeleteXHRPersonas">7. Delete XHR-Borrar Persona</button>
-    <br>
-    <button id="btnPutXHRPersonas">8. Put XHR-Modificar Persona</button>
-    <br>
+    <div class="divVerde">
+        <p>XML HTTP Requests</p>
+        <button id="btnXHRPersonas">1. XHR-Get Personas</button>
+        <button id="btnPostXHRPersonas">6. Post XHR-Post Persona</button>
+        <button id="btnPutXHRPersonas">8. Put XHR-Put Persona</button>
+        <button id="btnDeleteXHRPersonas">7. Delete XHR-Delete Persona</button>
+    </div>
+
+    <div class="divAmarillo">
+        <p>Fetch</p>
+        <button id="btnFetchPersonas">2. Fetch-Get Personas</button>
+        <button id="btnPostFetchPersonas">9. Fetch-Post Personas</button>
+        <button id="btnPutFetchPersonas">13. Fetch-Put Personas</button>
+        <button id="btnDeleteFetchPersonas">11. Fetch-Delete Personas</button>
+    </div>
+
+    <div class="divVerde">
+        <p>Async</p>
+        <button id="btnAsyncPersonas">3. Async Fetch-Get Personas</button>
+        <button id="btnPostAsyncPersonas">10. Async Fetch-Post Personas</button>
+        <button id="btnPutAsyncPersonas">14. Async Fetch-Put Personas</button>
+        <button id="btnDeleteAsyncPersonas">10. Async Fetch-Delete Personas</button>
+    </div>
+
+    <div class="divAmarillo">
+        <p>Async Axios</p>
+        <button id="btnAsyncAxiosPersonas">5. Async Axios-Get Personas</button>
+        <button id="btnPostAsyncAxiosPersonas">5. Async Axios-Post Personas</button>
+        <button id="btnPutAsyncAxiosPersonas">5. Async Axios-Put Personas</button>
+        <button id="btnDeleteAsyncAxiosPersonas">12. Async Axios-Delete Personas</button>
+    </div>
+
+    <div class="divVerde">
+        <p>Axios</p>
+        <button id="btnAxiosPersonas">4. Axios-Get Personas</button>
+        <button id="btnPostAxiosPersonas">4. Axios-Post Personas</button>
+        <button id="btnPutAxiosPersonas">4. Axios-Put Personas</button>
+        <button id="btnDeleteAxiosPersonas">4. Axios-Delete Personas</button>
+    </div>
+
     <div id="divInfo"></div>
 </body>
 </html>
