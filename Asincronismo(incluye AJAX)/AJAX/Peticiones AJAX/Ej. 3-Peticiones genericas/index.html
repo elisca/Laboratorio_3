@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Server</title>
+    <!-- Script -->
+    <script src="./scripts.js" defer></script>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./assets/css/estilos.css">
+
+    <!-- Libreria Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="divAmarillo">
+        <p>Petición Personalizada</p>
+        <div>            
+            <div>                
+                <label for="txtId">ID:</label>
+                <input type="number" name="txtId" id="txtId" required value="0">
+            </div>
+                <label for="txtNombre">Nombre:</label>
+                <input type="text" name="txtNombre" id="txtNombre" required value="Ezequiel">
+            <div>                
+                <label for="txtApellido">Apellido:</label>
+                <input type="text" name="txtApellido" id="txtApellido" required value="Lisca">
+            </div>
+            <div>                
+                <label for="txtEmail">Email:</label>
+                <input type="text" name="txtEmail" id="txtEmail" required value="ezequiel.lisca@live.com">
+            </div>
+        </div>
+        <div> 
+            <div>                
+                <label for="lstPeticion">Método Petición:</label>
+                <select name="lstPeticion" id="lstPeticion" required>
+                        <option value="GET">1. GET</option>
+                        <option value="POST">2. POST</option>
+                        <option value="PUT">3. PUT</option>
+                        <option value="DELETE">4. DELETE</option>
+                </select>
+            </div>
+            <div>                
+                <label for="lstHerramienta">Herramienta:</label>
+                <select name="lstHerramienta" id="lstHerramienta" required>
+                        <option value="XHR">1. XML HTTP Request</option>
+                        <option value="FETCH">2. Fetch</option>
+                        <option value="ASYNC-FETCH">3. Async Fetch</option>
+                        <option value="AXIOS">4. AXIOS</option>
+                        <option value="ASYNC-AXIOS">5. ASYNC AXIOS</option>
+                </select>
+            </div>
+            <button id="btnEnviar">Enviar</button>
+        </div>            
+    </div>
+
+    <div id="divInfo"></div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap');
+
+*{
+    margin: 2px;
+}
+
+.divAmarillo{
+    padding:10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightgoldenrodyellow;
+}
+
+button{
+    width: 150px;
+    height: 40px;
+}
+
+p{
+    width: 150px;
+    font-family: 'Akaya Kanadaka','Times New Roman';
+}
