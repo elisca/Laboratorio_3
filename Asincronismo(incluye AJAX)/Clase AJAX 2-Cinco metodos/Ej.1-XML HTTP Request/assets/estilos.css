@@ -1,0 +1,15 @@
+.spinner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    background-color: burlywood;
+}
+
+button{
+    min-width: 170px;
+}
+
+button:hover{
+    background-color: chartreuse;
+}

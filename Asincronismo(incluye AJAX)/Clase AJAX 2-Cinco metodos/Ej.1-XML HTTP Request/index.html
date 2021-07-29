@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peticiones AJAX</title>
+    <script src="./assets/scripts.js" defer></script>
+    <link rel="stylesheet" href="./assets/estilos.css">
+
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div>        
+        <h1>GET</h1>
+        <button onclick="getXhrCocineros();">XHR-Traer Datos</button>
+        <button onclick="getFetchCocineros();">Fetch-Traer Datos</button>
+        <button onclick="getAsyncFetchCocineros();">Async Fetch-Traer Datos</button>
+        <button onclick="getAxiosCocineros();">Axios-Traer Datos</button>
+        <button onclick="getAsyncAxiosCocineros();">Async Axios-Traer Datos</button>
+    </div>
+
+    <div>
+        <h1>POST</h1>
+        <button onclick="postXhrCocinero();">XHR-Guardar Dato</button>
+        <button onclick="postFetchCocineros();">Fetch-Guardar Dato</button>
+        <button onclick="postAsyncFetchCocineros();">Async Fetch-Guardar Dato</button>
+        <button onclick="postAxiosCocineros();">Axios-Guardar Dato</button>
+        <button onclick="postAsyncAxiosCocineros();">Async Axios-Guardar Dato</button>
+    </div>
+
+    <div>
+        <h1>PUT</h1>
+        <button onclick="putXhrCocinero();">XHR-Modificar Dato</button>
+        <button onclick="putFetchCocineros();">Fetch-Modificar Dato</button>
+        <button onclick="putAsyncFetchCocineros();">Async Fetch-Modificar Dato</button>
+        <button onclick="putAxiosCocineros();">Axios-Modificar Dato</button>
+        <button onclick="putAsyncAxiosCocineros();">Async Axios-Modificar Dato</button>
+    </div>
+
+    <div>
+        <h1>DELETE</h1>
+        <button onclick="deleteXhrCocinero();">XHR-Eliminar Dato</button>
+        <button onclick="deleteFetchCocineros();">Fetch-Eliminar Dato</button>
+        <button onclick="deleteAsyncFetchCocineros();">Delete Fetch-Eliminar Dato</button>
+        <button onclick="deleteAxiosCocineros();">Axios-Eliminar Dato</button>
+        <button onclick="deleteAsyncAxiosCocineros();">Async Axios-Eliminar Dato</button>
+    </div>
+    <div id="spinner"></div>
+</body>
+</html>

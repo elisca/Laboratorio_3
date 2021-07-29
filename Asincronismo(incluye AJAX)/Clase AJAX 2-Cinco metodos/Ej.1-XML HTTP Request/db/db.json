@@ -1,0 +1,34 @@
+{
+  "cocineros": [
+    {
+      "id": 1,
+      "nombre": "Donato",
+      "especialidad": "Pastas"
+    },
+    {
+      "id": 2,
+      "nombre": "German",
+      "especialidad": "Verduras"
+    },
+    {
+      "id": 3,
+      "nombre": "Camila-Modificado",
+      "especialidad": "Tartas-Modificado"
+    },
+    {
+      "nombre": "Candela",
+      "especialidad": "Milanesa",
+      "id": 4
+    },
+    {
+      "nombre": "Candela",
+      "especialidad": "Milanesa",
+      "id": 5
+    },
+    {
+      "nombre": "Candela",
+      "especialidad": "Milanesa",
+      "id": 6
+    }
+  ]
+}
