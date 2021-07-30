@@ -1,5 +1,3 @@
-//postFetchCocineros incluir spinner
-
 const divSpinner=document.getElementById('spinner');
 
 //Array para manejo de datos de entrada y salida
